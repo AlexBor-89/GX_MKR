@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dm633vd5cs8lq"]
+
+[ext_resource type="Script" uid="uid://xjt5pn1h1tn" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://cjgo2onj68vqw" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://be2wvglkb84qq" path="res://Vehicles/Motos/moto_1.tscn" id="2_272bh"]
+[ext_resource type="PackedScene" uid="uid://1hpob4k8hfab" path="res://Vehicles/Cars/car_1.tscn" id="3_5vw27"]
+[ext_resource type="PackedScene" uid="uid://bljpqmaqxad2h" path="res://Vehicles/Cars/car_2.tscn" id="3_kek77"]
+[ext_resource type="PackedScene" uid="uid://cq4tvluecsgvw" path="res://Vehicles/Cars/car_3.tscn" id="4_4c57u"]
+[ext_resource type="Texture2D" uid="uid://wsjmjhpa4s0k" path="res://PNG/Motorcycles/Moto_1/motorcycle_green.png" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://b3ub6o0xhvcel" path="res://Vehicles/Cars/car_4.tscn" id="5_efxa6"]
+[ext_resource type="Script" uid="uid://ck3iwukkhbb7v" path="res://road.gd" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://bhv05yju5yiub" path="res://road_stream.gd" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://bx71djcfnagyi" path="res://Vehicles/Cars/car_5.tscn" id="6_dg77c"]
+[ext_resource type="PackedScene" uid="uid://c4st03trt4x7u" path="res://decor_chunk.tscn" id="7_5vw27"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7mycd"]
+radius = 21.0
+height = 98.0
+
+[node name="Main" type="Node2D" unique_id=1095268863]
+script = ExtResource("1_1bvp3")
+vehicle_scenes = Array[PackedScene]([ExtResource("3_5vw27"), ExtResource("3_kek77"), ExtResource("4_4c57u"), ExtResource("5_efxa6"), ExtResource("6_dg77c"), ExtResource("2_272bh")])
+
+[node name="Player" type="Area2D" parent="." unique_id=402471577]
+position = Vector2(360, 1120)
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1061334136]
+texture = ExtResource("4_lquwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1127645193]
+shape = SubResource("CapsuleShape2D_7mycd")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1973588385]
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=1482412847]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 206.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 48
+text = "Счёт: 0"
+
+[node name="GameOverLabel" type="Label" parent="HUD" unique_id=1208274803]
+offset_top = 520.0
+offset_right = 720.0
+offset_bottom = 597.0
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=2040592009]
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1802319740]
+position = Vector2(360, 640)
+
+[node name="Road" type="Node2D" parent="." unique_id=460584257]
+z_index = -1
+script = ExtResource("6_7mycd")
+
+[node name="DecorStream" type="Node2D" parent="." unique_id=1784487446]
+script = ExtResource("6_272bh")
+chunk_scene = ExtResource("7_5vw27")
+
+[connection signal="area_entered" from="Player" to="." method="_on_player_area_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b3ub6o0xhvcel"]
+
+[ext_resource type="Script" uid="uid://c55x44wtswwl6" path="res://Vehicles/vehicle.gd" id="1_qcghu"]
+[ext_resource type="Texture2D" uid="uid://olat152be8yl" path="res://PNG/Cars/Car_4/car_black_4.png" id="2_gfexp"]
+[ext_resource type="Texture2D" uid="uid://bp77bvit2qui1" path="res://PNG/Cars/Car_4/car_blue_4.png" id="3_8y5d8"]
+[ext_resource type="Texture2D" uid="uid://cscjxg30aw0ej" path="res://PNG/Cars/Car_4/car_green_4.png" id="4_wy28b"]
+[ext_resource type="Texture2D" uid="uid://btn7bku2c2ero" path="res://PNG/Cars/Car_4/car_red_4.png" id="5_yv4t8"]
+[ext_resource type="Texture2D" uid="uid://bu4cmksywjt02" path="res://PNG/Cars/Car_4/car_yellow_4.png" id="6_4l8mj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ve5f3"]
+size = Vector2(70, 130)
+
+[node name="Car_4" type="Area2D" unique_id=73653406 groups=["items"]]
+script = ExtResource("1_qcghu")
+textures = Array[Texture2D]([ExtResource("2_gfexp"), ExtResource("3_8y5d8"), ExtResource("4_wy28b"), ExtResource("5_yv4t8"), ExtResource("6_4l8mj")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=631335424]
+texture = ExtResource("2_gfexp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721264969]
+shape = SubResource("RectangleShape2D_ve5f3")

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c4st03trt4x7u"]
+
+[ext_resource type="Texture2D" uid="uid://b1nrnsd0oy2ym" path="res://PNG/Tiles/Grass/land_grass03.png" id="1_6ofb4"]
+[ext_resource type="Texture2D" uid="uid://bm6aii5piibo6" path="res://PNG/Tiles/Grass/land_grass05.png" id="2_oea7a"]
+
+[node name="DecorChunk" type="Node2D" unique_id=1184416802]
+
+[node name="LandGrass_L1" type="Sprite2D" parent="." unique_id=1979335284]
+position = Vector2(56, 64)
+texture = ExtResource("1_6ofb4")
+
+[node name="LandGrass_L2" type="Sprite2D" parent="LandGrass_L1" unique_id=1470752485]
+position = Vector2(0, 128)
+texture = ExtResource("1_6ofb4")
+
+[node name="LandGrass_L3" type="Sprite2D" parent="LandGrass_L1/LandGrass_L2" unique_id=1680568875]
+position = Vector2(0, 128)
+texture = ExtResource("1_6ofb4")
+
+[node name="LandGrass_L4" type="Sprite2D" parent="LandGrass_L1/LandGrass_L2/LandGrass_L3" unique_id=1320247082]
+position = Vector2(0, 128)
+texture = ExtResource("1_6ofb4")
+
+[node name="LandGrass_L5" type="Sprite2D" parent="LandGrass_L1/LandGrass_L2/LandGrass_L3/LandGrass_L4" unique_id=477159438]
+position = Vector2(0, 128)
+texture = ExtResource("1_6ofb4")
+
+[node name="LandGrass_R1" type="Sprite2D" parent="." unique_id=1666260924]
+position = Vector2(664, 64)
+texture = ExtResource("2_oea7a")
+
+[node name="LandGrass_R2" type="Sprite2D" parent="LandGrass_R1" unique_id=519353986]
+position = Vector2(0, 128)
+texture = ExtResource("2_oea7a")
+
+[node name="LandGrass_R3" type="Sprite2D" parent="LandGrass_R1/LandGrass_R2" unique_id=51176375]
+position = Vector2(0, 128)
+texture = ExtResource("2_oea7a")
+
+[node name="LandGrass_R4" type="Sprite2D" parent="LandGrass_R1/LandGrass_R2/LandGrass_R3" unique_id=1446089918]
+position = Vector2(0, 128)
+texture = ExtResource("2_oea7a")
+
+[node name="LandGrass_R5" type="Sprite2D" parent="LandGrass_R1/LandGrass_R2/LandGrass_R3/LandGrass_R4" unique_id=903313677]
+position = Vector2(0, 128)
+texture = ExtResource("2_oea7a")
