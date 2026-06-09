@@ -25,6 +25,10 @@ texture = ExtResource("1_6ofb4")
 position = Vector2(0, 128)
 texture = ExtResource("1_6ofb4")
 
+[node name="LandGrass_L5" type="Sprite2D" parent="LandGrass_L1/LandGrass_L2/LandGrass_L3/LandGrass_L4/LandGrass_L5" unique_id=294875325]
+position = Vector2(0, 128)
+texture = ExtResource("1_6ofb4")
+
 [node name="LandGrass_R1" type="Sprite2D" parent="." unique_id=1666260924]
 position = Vector2(664, 64)
 texture = ExtResource("2_oea7a")
@@ -42,5 +46,9 @@ position = Vector2(0, 128)
 texture = ExtResource("2_oea7a")
 
 [node name="LandGrass_R5" type="Sprite2D" parent="LandGrass_R1/LandGrass_R2/LandGrass_R3/LandGrass_R4" unique_id=903313677]
+position = Vector2(0, 128)
+texture = ExtResource("2_oea7a")
+
+[node name="LandGrass_R5" type="Sprite2D" parent="LandGrass_R1/LandGrass_R2/LandGrass_R3/LandGrass_R4/LandGrass_R5" unique_id=15067058]
 position = Vector2(0, 128)
 texture = ExtResource("2_oea7a")

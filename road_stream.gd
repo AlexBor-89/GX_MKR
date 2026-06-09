@@ -21,7 +21,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var move = get_parent().world_speed_px * delta   # двигаемся со скоростью мира
 	var loop = CHUNK_HEIGHT * CHUNK_COUNT
+	var rl = get_parent().road_left()    # текущие края дороги (анимируются на переходе)
+	var rr = get_parent().road_right()
 	for c in chunks:
 		c.position.y += move
 		if c.position.y >= get_viewport_rect().size.y:
 			c.position.y -= loop   # уехал вниз — наверх, в начало стопки
+		# привязка декора к краям дороги — следует за расширением/сужением
+		if c.has_node("LandGrass_L1"):
+			c.get_node("LandGrass_L1").position.x = rl - 64.0
+		if c.has_node("LandGrass_R1"):
+			c.get_node("LandGrass_R1").position.x = rr + 64.0
